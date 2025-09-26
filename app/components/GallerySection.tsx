@@ -6,16 +6,16 @@ import "./GallerySection.css";
 import { motion, AnimatePresence } from "framer-motion";
 
 const galleryImages = [
-  { src: "/images/slider1.webp", alt: "Nitya Gallery Image 1", caption: "Team Workshop" },
-  { src: "/images/slider2.webp", alt: "Nitya Gallery Image 2", caption: "Web Design Training" },
-  { src: "/images/slider3.webp", alt: "Nitya Gallery Image 3", caption: "Social Media Seminar" },
-  { src: "/images/slider4.webp", alt: "Nitya Gallery Image 4", caption: "Marketing Strategies" },
-  { src: "/images/slider5.webp", alt: "Nitya Gallery Image 5", caption: "Coding Bootcamp" },
-  { src: "/images/slider6.webp", alt: "Nitya Gallery Image 6", caption: "Digital Advertising" },
-  { src: "/images/slider7.webp", alt: "Nitya Gallery Image 7", caption: "Creative Workshop" },
-  { src: "/images/slider8.webp", alt: "Nitya Gallery Image 8", caption: "Content Creation" },
-  { src: "/images/slider9.webp", alt: "Nitya Gallery Image 9", caption: "SEO Training" },
-  { src: "/images/slider10.webp", alt: "Nitya Gallery Image 10", caption: "Analytics Workshop" },
+  { src: "/images/slider1.webp", alt: "  Image 1", caption: "Team Workshop" },
+  { src: "/images/slider2.webp", alt: " Image 2", caption: "Web Design Training" },
+  { src: "/images/slider3.webp", alt: "  Image 3", caption: "Social Media Seminar" },
+  { src: "/images/slider4.webp", alt: "Image 4", caption: "Marketing Strategies" },
+  { src: "/images/slider5.webp", alt: " Image 5", caption: "Coding Bootcamp" },
+  { src: "/images/slider6.webp", alt: "Image 6", caption: "Digital Advertising" },
+  { src: "/images/slider7.webp", alt: " Image 7", caption: "Creative Workshop" },
+  { src: "/images/slider8.webp", alt: " Image 8", caption: "Content Creation" },
+  { src: "/images/slider9.webp", alt: "Image 9", caption: "SEO Training" },
+  { src: "/images/slider10.webp", alt: " Image 10", caption: "Analytics Workshop" },
 ];
 
 

@@ -32,7 +32,7 @@ const letterVariants = {
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }} // animate when 30% visible
           >
-            <Image src="/images/logo.png" alt="Boostim Logo" width={200} height={100} />
+            <Image src="/images/logo.png" alt="Logo" width={200} height={100} />
           </motion.div>
 
           <p className="text-white font-['Roboto'] lg:w-[450px] text-[14px] font-normal leading-[24px]">
