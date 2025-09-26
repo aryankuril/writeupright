@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from 'next/link';
 
 const Footer = () => {
 
@@ -32,7 +33,17 @@ const letterVariants = {
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }} // animate when 30% visible
           >
-            <Image src="/images/logo.png" alt="Logo" width={200} height={100} />
+            <Link href="/" className="flex items-center">
+            <Image
+              src="/images/Logo.png"
+              alt=" Logo"
+              width={200}
+              height={60}
+              priority
+              className="max-sm:w-[200px]"
+            />
+          </Link>
+
           </motion.div>
 
           <p className="text-white font-['Roboto'] lg:w-[450px] text-[14px] font-normal leading-[24px]">

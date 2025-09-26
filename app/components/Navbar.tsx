@@ -48,7 +48,7 @@ export default function Header() {
           <Link href="/" className="flex items-center">
             <Image
               src="/images/Logo.png"
-              alt="Presolv360 Logo"
+              alt=" Logo"
               width={200}
               height={60}
               priority
