@@ -105,7 +105,7 @@ const SecondSection = () => {
         <AnimatedButton
      text="Explore More"
             href="/allservices"
-            className="bg-[#0a253b] text-white px-6 py-3 rounded-[10px]"
+            className=" bg-[#0a253b] border-2 border-white text-white"
             />
         </motion.div>
         </div>

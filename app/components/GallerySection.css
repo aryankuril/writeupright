@@ -32,6 +32,7 @@
     align-items: flex-start;
   }
   .gallery-right-text {
+      color: #1e293b;
     text-align: left;
     margin-top: 1rem;
   }
@@ -39,7 +40,7 @@
 
 
 .gallery-title {
-    
+color: #1e293b;
   font-family: var(--font-philosopher);
   font-size: 2.5rem;
   font-weight: 700;
@@ -49,7 +50,7 @@
 }
 
 .gallery-description {
-
+  color: #1e293b;
   font-size: 1.1rem;
   line-height: 1.6;
   max-width: 600px;
@@ -192,10 +193,12 @@
   }
 
   .gallery-title {
+      color: #1e293b;
     font-size: 2rem;
   }
 
   .gallery-description {
+      color: #1e293b;
     font-size: 1rem;
   }
 
