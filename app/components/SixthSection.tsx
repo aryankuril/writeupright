@@ -44,7 +44,7 @@ const SixthSection = () => {
           <AnimatedButton
             text="Get started"
             href="/profile"
-            className="mt-4 bg-[#0a253b] border-2 border-white text-white"
+            className="mt-4 bg-[#0a253b]  text-white"
           />
         </motion.div>
       </motion.div>

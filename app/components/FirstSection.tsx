@@ -67,7 +67,7 @@ const child = {
     <section className="w-full container py-10 sm:py-15 lg:py-20 flex flex-col md:flex-row items-center justify-between gap-10">
       <div className="flex-1 text-center md:text-left">
 <motion.h1
-  className="text-[25px] sm:text-[30px] md:text-[40px] lg:text-[50px] xl:text-[65px]
+  className="text-[35px] sm:text-[30px] md:text-[40px] lg:text-[50px] xl:text-[65px]
              leading-[1.05] lg:leading-[1] font-bold text-[#1D1D1D]
              tracking-tight w-full max-w-[650px] mx-auto md:mx-0
              flex flex-wrap lg:gap-x-1 uppercase"
