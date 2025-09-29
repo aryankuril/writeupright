@@ -36,7 +36,7 @@ const [activeIndex, setActiveIndex] = useState<number | null>(0);
     setActiveIndex(activeIndex === index ? null : index);
   };
   return (
-     <section className="container max-w-6xl bg-white lg:mt-30 mt-20 rounded-[20px] mx-auto px-20 py-16">
+     <section className="container max-w-6xl bg-white rounded-[20px] mx-auto py-10 sm:py-15 lg:py-20 ">
       <div className="flex flex-col lg:flex-row justify-between gap-10">
         {/* Left Section */}
         <div className="lg:w-5/12">

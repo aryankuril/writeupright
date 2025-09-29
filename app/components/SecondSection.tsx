@@ -31,7 +31,7 @@ const fadeFromLeft = {
 
 const SecondSection = () => {
   return (
-    <section className="container py-12 sm:py-16 md:py-24">
+    <section className="container py-10 sm:py-15 lg:py-20">
       <div className="space-y-6">
         {/* Row 1 – comes from right */}
         <motion.div

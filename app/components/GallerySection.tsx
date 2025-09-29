@@ -37,7 +37,7 @@ const GallerySection = () => {
   }, [emblaApi]);
 
   return (
-    <section className="gallery-section">
+    <section className="gallery-section container py-10 sm:py-15 lg:py-20">
       <div className="gallery-container">
 <div className="gallery-header">
   <div>

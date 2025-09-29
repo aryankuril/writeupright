@@ -64,22 +64,22 @@ const child = {
   };
 
   return (
-    <section className="w-full container py-12 flex flex-col md:flex-row items-center justify-between gap-10">
+    <section className="w-full container py-10 sm:py-15 lg:py-20 flex flex-col md:flex-row items-center justify-between gap-10">
       <div className="flex-1 text-center md:text-left">
 <motion.h1
   className="text-[20px] sm:text-[30px] md:text-[40px] lg:text-[50px] xl:text-[65px]
              leading-[1.05] lg:leading-[1] font-normal text-[#1D1D1D]
-             tracking-tight w-full max-w-[650px] font-[Miso] mx-auto md:mx-0
-             flex flex-wrap gap-x-2"
+             tracking-tight w-full max-w-[650px] mx-auto md:mx-0
+             flex flex-wrap lg:gap-x-1 uppercase"
   variants={container}
   initial="hidden"
   animate="visible"
   onAnimationComplete={() => setShowRotating(true)}
 >
   {words.map((word, i) => (
-    <motion.span key={i} variants={child} className="inline-block">
-      {word}
-    </motion.span>
+    <motion.span key={i} variants={child} className="inline-block lg:mr-3 mr-1">
+    {word}{" "}
+  </motion.span>
   ))}
 
   {/* Rotating word */}
@@ -109,12 +109,12 @@ const child = {
   </span>
 </motion.h1>
 
-
+<br />
         <motion.p
           className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl
                      w-full max-w-[1000px] leading-relaxed font-normal
-                     text-[#1D1D1D] tracking-normal capitalize font-[Poppins]
-                     mx-auto md:mx-0 mt-4 break-words"
+                     text-[#1D1D1D] tracking-normal  font-[Poppins]
+                     mx-auto md:mx-0 mt-4 break-words uppercase"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
