@@ -28,6 +28,8 @@ export default function Home() {
     return () => lenis.destroy();
   }, []);
 
+
+  // 
   return (
     <main>
       <Navbar />
