@@ -6,16 +6,18 @@ import "./GallerySection.css";
 import { motion, AnimatePresence } from "framer-motion";
 
 const galleryImages = [
-  { src: "/images/slider1.webp", alt: "  Image 1", caption: "Team Workshop" },
-  { src: "/images/slider2.webp", alt: " Image 2", caption: "Web Design Training" },
-  { src: "/images/slider3.webp", alt: "  Image 3", caption: "Social Media Seminar" },
-  { src: "/images/slider4.webp", alt: "Image 4", caption: "Marketing Strategies" },
-  { src: "/images/slider5.webp", alt: " Image 5", caption: "Coding Bootcamp" },
-  { src: "/images/slider6.webp", alt: "Image 6", caption: "Digital Advertising" },
-  { src: "/images/slider7.webp", alt: " Image 7", caption: "Creative Workshop" },
-  { src: "/images/slider8.webp", alt: " Image 8", caption: "Content Creation" },
-  { src: "/images/slider9.webp", alt: "Image 9", caption: "SEO Training" },
-  { src: "/images/slider10.webp", alt: " Image 10", caption: "Analytics Workshop" },
+  { src: "/images/slider1.webp", alt: "  Image 1", caption: "Website Development" },
+  { src: "/images/slider2.webp", alt: " Image 2", caption: "Application development" },
+  { src: "/images/slider3.webp", alt: "  Image 3", caption: "Saas Development" },
+  { src: "/images/slider4.webp", alt: "Image 4", caption: "UI/UX" },
+  { src: "/images/slider5.webp", alt: " Image 5", caption: "SEO" },
+  { src: "/images/slider6.webp", alt: "Image 6", caption: "GEO/AI SEO" },
+  { src: "/images/slider7.webp", alt: " Image 7", caption: "Pay Per Click Marketing" },
+  { src: "/images/slider8.webp", alt: " Image 8", caption: "Meta Ads" },
+  { src: "/images/slider9.webp", alt: "Image 9", caption: "Google Ads" },
+  { src: "/images/slider10.webp", alt: " Image 10", caption: "Programmatic Advertising" },
+    { src: "/images/slider1.webp", alt: "  Image 1", caption: "Social Media Management" },
+  { src: "/images/slider2.webp", alt: " Image 2", caption: "Graphic Designing" },
 ];
 
 

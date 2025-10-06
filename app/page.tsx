@@ -8,6 +8,7 @@ import ThirdSection from "./components/ThirdSection";
 import ForthSection from './components/ForthSection';
 import Fifthsection from "./components/Fifthsection";
 import SixthSection from "./components/SixthSection";
+import SeventhSection from "./components/SeventhSection";
 import Footer from './components/Footer';
 import Lenis from '@studio-freight/lenis';
 
@@ -36,6 +37,7 @@ export default function Home() {
       <FirstSection />
       <SecondSection />
       <GallerySection />
+      <SeventhSection/>
       <ThirdSection />
       <ForthSection />
       <Fifthsection />
