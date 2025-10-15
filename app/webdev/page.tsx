@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import Header from '../components/Navbar'
 import ProcessSection from '../components/WebDev/ProcessSection'
