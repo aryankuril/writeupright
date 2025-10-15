@@ -51,9 +51,14 @@ export default function ProcessSection() {
   };
 
   return (
-    <section className="bg-[#0a0a0a] text-white min-h-screen flex flex-col md:flex-row items-center justify-between px-10 md:px-20 py-10 overflow-hidden">
+
+    <div className="py-10 sm:py-15 lg:py-20">
+      
+      
+    <section className="bg-[#0a0a0a] text-white min-h-screen  flex flex-col md:flex-row items-center justify-between px-10 md:px-20 py-10 overflow-hidden">
       {/* LEFT CONTENT (SLIDER) */}
-      <div className="md:w-1/2 space-y-6 relative min-h-[300px]">
+      
+      <div className="md:w-1/2  w-full space-y-6 relative min-h-[300px] lg:h-full h-50">
         <AnimatePresence mode="wait">
           <motion.div
             key={active.id}
@@ -106,66 +111,81 @@ export default function ProcessSection() {
       </div>
 
       {/* RIGHT 3D STACK */}
+    {/* RIGHT 3D STACK */}
+<div
+  className="relative w-full md:w-1/2 flex justify-center items-center lg:mb-75 mb-75 md:mb-0 px-2 sm:px-10"
+  style={{ perspective: "1000px", transformStyle: "preserve-3d" }}
+>
+  {steps.map((step, index) => {
+    const isActive = active.id === step.id;
+    const isEven = index % 2 === 0;
+
+    return (
       <div
-        className="relative md:w-1/2 flex justify-center items-center mb-70 "
-        style={{ perspective: "1000px", transformStyle: "preserve-3d" }}
+        key={step.id}
+        onMouseEnter={() => setActiveIndex(index)}
+        className={clsx(
+          "group absolute flex items-center justify-between transition-all duration-500",
+          "w-[230px] sm:w-[260px] md:w-[280px] lg:w-[280px]"
+        )}
+        style={{
+          // ✅ Reduced vertical and depth spacing
+          transform: `
+            rotateX(58deg)
+            translateY(${index * (window.innerWidth < 640 ? 40 : 45)}px)
+            translateZ(${index * (window.innerWidth < 640 ? -30 : -85)}px)
+          `,
+          transition: "all 0.6s ease",
+          zIndex: steps.length - index,
+        }}
       >
-        {steps.map((step, index) => {
-          const isActive = active.id === step.id;
-          const isEven = index % 2 === 0;
+        {/* Layer Block */}
+        <div
+          className={clsx(
+            "rounded-xl transition-all duration-500 shadow-xl w-full relative flex justify-center items-center",
+            "h-[45px] sm:h-[55px] md:h-[80px]",
+            isActive
+              ? "bg-[#9D00FF] scale-105 shadow-[0_0_25px_rgba(157,0,255,0.6)]"
+              : "bg-[#242424]"
+          )}
+        >
+          {/* ✅ Mobile: Centered Text Inside */}
+          <div className="block md:hidden text-[11px] sm:text-xs font-medium text-white text-center">
+            {step.id}. {step.title}
+          </div>
+        </div>
 
-          return (
-            <div
-              key={step.id}
-              onMouseEnter={() => setActiveIndex(index)}
-              className="group absolute flex items-center justify-between w-[380px] md:w-[280px]"
-              style={{
-                transform: `
-                  rotateX(58deg)
-                  translateY(${index * 60}px)
-                  translateZ(${index * -60}px)
-                `,
-                transition: "all 0.6s ease",
-                zIndex: steps.length - index,
-              }}
-            >
-              {/* Layer Block */}
-              <div
-                className={clsx(
-                  "h-[60px] md:h-[80px] rounded-xl transition-all duration-500 shadow-xl w-full",
-                  isActive
-                    ? "bg-[#9D00FF] scale-105 shadow-[0_0_35px_rgba(157,0,255,0.7)]"
-                    : "bg-[#242424]"
-                )}
-              ></div>
-
-              {/* Outside Title (Flat, with dashed connector) */}
-              <div
-                className={clsx(
-                  "absolute flex items-center gap-3 text-sm md:text-base font-medium whitespace-nowrap px-5 py-2 transition-all duration-500 rounded-full",
-                  isActive
-                    ? "bg-[#9D00FF] text-white"
-                    : "bg-[#121212] text-gray-300"
-                )}
-                style={{
-                  top: "50%",
-                  transform: "translateY(-50%)",
-                  [isEven ? "left" : "right"]: "calc(100% + 30px)",
-                }}
-              >
-                {step.id}. {step.title}
-                <span
-                  className={clsx(
-                    "absolute border-dashed border-t w-8",
-                    isEven ? "left-[-30px]" : "right-[-30px]",
-                    isActive ? "border-[#9D00FF]" : "border-gray-500"
-                  )}
-                ></span>
-              </div>
-            </div>
-          );
-        })}
+        {/* ✅ Desktop: Outside Title Tag with Dashed Connector */}
+        <div
+          className={clsx(
+            "hidden md:flex absolute items-center font-medium whitespace-nowrap rounded-full transition-all duration-500",
+            "gap-2 sm:gap-3 text-xs md:text-base px-4 md:px-5 py-1.5 md:py-2",
+            isActive
+              ? "bg-[#9D00FF] text-white"
+              : "bg-[#121212] text-gray-300"
+          )}
+          style={{
+            top: "50%",
+            transform: "translateY(-50%)",
+            [isEven ? "left" : "right"]: "calc(100% + 30px)",
+          }}
+        >
+          {step.id}. {step.title}
+          <span
+            className={clsx(
+              "absolute border-dashed border-t w-8",
+              isEven ? "left-[-30px]" : "right-[-30px]",
+              isActive ? "border-[#9D00FF]" : "border-gray-500"
+            )}
+          ></span>
+        </div>
       </div>
+    );
+  })}
+</div>
+
+
     </section>
+    </div>
   );
 }

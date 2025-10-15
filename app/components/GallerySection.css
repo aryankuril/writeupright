@@ -261,3 +261,50 @@ color: #1e293b;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+
+.marquee-outer {
+  overflow: hidden;
+  width: 100%;
+  padding: 20px;
+}
+
+.marquee {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee-item {
+  flex: 0 0 auto;
+}
+
+/* scroll left */
+.marquee-left {
+  animation: marquee-left linear infinite;
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* scroll right */
+.marquee-right {
+  animation: marquee-right linear infinite;
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

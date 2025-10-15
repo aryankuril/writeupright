@@ -123,6 +123,7 @@ className="flex-1 text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#010205] fo
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }} // animate when 30% in view
+      
     >
       {"What Clients Say".split(" ").map((word, i) => (
         <motion.span
