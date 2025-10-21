@@ -10,27 +10,10 @@ import Fifthsection from "./components/Fifthsection";
 import SixthSection from "./components/SixthSection";
 import SeventhSection from "./components/SeventhSection";
 import Footer from './components/Footer';
-import Lenis from '@studio-freight/lenis';
+
 
 export default function Home() {
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 2.0, // 🔥 Higher = slower + smoother (default is ~1.2)
-      easing: (t) => 1 - Math.pow(1 - t, 3), // 🔥 Custom easing for buttery effect
-      lerp: 0.05, // 🔥 Lower = smoother but slower catch-up
-    });
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-    return () => lenis.destroy();
-  }, []);
-
-
-  // 
   return (
     <main>
       <Navbar />

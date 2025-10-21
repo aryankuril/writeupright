@@ -142,3 +142,24 @@ body {
 .fade-up {
   animation: fadeUp 1s ease-out forwards;
 }
+
+
+
+
+
+@keyframes vertical-marquee {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-vertical-marquee {
+  animation: vertical-marquee linear infinite;
+}
+
+.animate-vertical-marquee.reverse {
+  animation-direction: reverse;
+}

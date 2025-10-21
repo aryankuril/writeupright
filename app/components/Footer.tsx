@@ -200,11 +200,11 @@ const letterVariants = {
           <ul className="space-y-4 text-white text-[14px]">
             <li className="flex items-center gap-3">
               <Image src="/icons/phone-w.png" alt="Phone" width={16} height={16} />
-              (406) 555-0120
+              91-88995151
             </li>
             <li className="flex items-center gap-3">
               <Image src="/icons/email-w.png" alt="Email" width={16} height={16} />
-              Hey@boostim.com
+             what@gmail.com
             </li>
             <li className="flex items-center gap-3">
               <Image src="/icons/location-w.png" alt="Location" className="-mt-5" width={20} height={30} />

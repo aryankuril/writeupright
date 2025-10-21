@@ -20,7 +20,7 @@ const SixthSection = () => {
           loop
           className="absolute top-0 left-0 w-full h-full object-cover -z-10"
         >
-          <source src="/images/card-bg.mp4" type="video/mp4" />
+          <source src="/videos/card-bg.mp4" type="video/mp4" />
         </video>
 
         {/* Left Text */}
@@ -43,7 +43,7 @@ const SixthSection = () => {
         >
           <AnimatedButton
             text="Get started"
-            href="/profile"
+            href="/contactus"
             className="mt-4 bg-[#0a253b]  text-white"
           />
         </motion.div>

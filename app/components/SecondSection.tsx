@@ -97,7 +97,7 @@ const SecondSection: React.FC = () => {
         >
           <AnimatedButton
             text="Explore More"
-            href="/allservices"
+            href="/contactus"
             className="bg-[#0a253b] border-2 border-white text-white"
           />
         </motion.div>

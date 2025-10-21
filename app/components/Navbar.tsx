@@ -11,7 +11,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [openServiceIndex, setOpenServiceIndex] = useState<number | null>(null); // ✅ FIXED HERE
+  const [openServiceIndex, setOpenServiceIndex] = useState<number | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -29,49 +29,59 @@ export default function Header() {
     { href: '/services', label: 'All Services' },
     { href: '/ourwork', label: 'Our Work' },
     { href: '/aboutus', label: 'About us' },
-    { href: '/insights', label: 'Insights' },
+    { href: '/contactus', label: 'Contact Us' },
   ];
 
   const servicesData = [
     {
       title: 'SEO',
       links: [
-        'Technical SEO',
-        'Content Marketing',
-        'International SEO',
-        'Ecommerce SEO',
-        'SEO Audits',
-        'SEO Migration Services',
-        'Local SEO',
+        { name: 'Technical SEO', href: '/services#technical-seo' },
+        { name: 'Content Marketing', href: '/services#content-marketing' },
+        { name: 'International SEO', href: '/services#international-seo' },
+        { name: 'Ecommerce SEO', href: '/services#ecommerce-seo' },
+        { name: 'SEO Audits', href: '/services#seo-audits' },
+        { name: 'SEO Migration Services', href: '/services#seo-migration' },
+        { name: 'Local SEO', href: '/services#local-seo' },
       ],
     },
     {
       title: 'AI Search',
       links: [
-        'Generative Engine Optimisation',
-        'AIO Optimisation',
-        'Deep Research',
-        'LLM Performance Tracking',
+        { name: 'Generative Engine Optimisation', href: '/services#geo' },
+        { name: 'AIO Optimisation', href: '/services#aio' },
+        { name: 'Deep Research', href: '/services#deep-research' },
+        { name: 'LLM Performance Tracking', href: '/services#llm-tracking' },
       ],
     },
     {
       title: 'Paid Media',
-      links: ['PPC', 'PPC Audit Services', 'Programmatic Advertising', 'Google Shopping'],
+      links: [
+        { name: 'PPC', href: '/services#ppc' },
+        { name: 'PPC Audit Services', href: '/services#ppc-audit' },
+        { name: 'Programmatic Advertising', href: '/services#programmatic' },
+        { name: 'Google Shopping', href: '/services#google-shopping' },
+      ],
     },
     {
       title: 'Social Media',
       links: [
-        'Facebook Ads',
-        'Instagram Ads',
-        'LinkedIn Ads',
-        'Reddit Ads',
-        'TikTok Ads',
-        'Youtube Ads',
+        { name: 'Facebook Ads', href: '/services/socialmedia' },
+        { name: 'Instagram Ads', href: '/services/socialmedia' },
+        { name: 'LinkedIn Ads', href: '/services/socialmedia' },
+        { name: 'Reddit Ads', href: '/services/socialmedia' },
+        { name: 'TikTok Ads', href: '/services/socialmedia' },
+        { name: 'Youtube Ads', href: '/services/socialmedia' },
       ],
     },
     {
-      title: 'Data and Analytics',
-      links: [],
+      title: 'Web Development',
+      links: [
+        { name: 'Custom Website Development', href: '/services/webdev' },
+        { name: 'Ecommerce Development', href: '/services/webdev' },
+        { name: 'CMS Development', href: '/services/webdev' },
+        { name: 'Web App Development', href: '/services/webdev' },
+      ],
     },
   ];
 
@@ -138,11 +148,14 @@ export default function Header() {
                         <h3 className="text-[18px] font-semibold mb-3">{col.title}</h3>
                         <ul className="space-y-2">
                           {col.links.map((link, idx) => (
-                            <li
-                              key={idx}
-                              className="text-[15px] text-gray-300 hover:text-white transition-colors cursor-pointer"
-                            >
-                              {link}
+                            <li key={idx}>
+                              <Link
+                                href={link.href}
+                                className="text-[15px] text-gray-300 hover:text-white transition-colors cursor-pointer"
+                                onClick={() => setIsServicesOpen(false)}
+                              >
+                                {link.name}
+                              </Link>
                             </li>
                           ))}
                         </ul>
@@ -236,11 +249,14 @@ export default function Header() {
                       {openServiceIndex === index && (
                         <ul className="mt-2 pl-3 space-y-2">
                           {service.links.map((link, i) => (
-                            <li
-                              key={i}
-                              className="text-gray-300 text-base hover:text-white transition-colors cursor-pointer"
-                            >
-                              {link}
+                            <li key={i}>
+                              <Link
+                                href={link.href}
+                                className="text-gray-300 text-base hover:text-white transition-colors cursor-pointer"
+                                onClick={() => setIsOpen(false)}
+                              >
+                                {link.name}
+                              </Link>
                             </li>
                           ))}
                         </ul>
@@ -267,7 +283,7 @@ export default function Header() {
 
             <AnimatedButton
               text="Get a free Quote"
-              href="/profile"
+              href="/contactus"
               className="w-full text-center px-6 py-3 mt-4"
             />
           </nav>

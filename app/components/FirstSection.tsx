@@ -126,7 +126,7 @@ const child = {
 
         <AnimatedButton
           text="Get a free Quote"
-          href="/profile"
+          href="/contactus"
           className="mt-4 bg-[#0a253b] border-2 border-white text-white"
         />
       </div>

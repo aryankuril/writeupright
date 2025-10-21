@@ -56,7 +56,7 @@ const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
                         <AnimatedButton
               text="More Questions"
-              href="/profile"
+              href="/contactus"
                className="bg-[#0a253b] border-2 border-white text-white"
             />
 
