@@ -1,8 +1,20 @@
 "use client";
 
 import React, { useState, ChangeEvent } from "react";
+import Image from "next/image";
 import confetti from "canvas-confetti";
 import AnimatedTextButton from "../button";
+
+// Define a proper type for confetti options
+interface ConfettiOptions {
+  particleCount?: number;
+  angle?: number;
+  spread?: number;
+  startVelocity?: number;
+  decay?: number;
+  scalar?: number;
+  origin?: { x: number; y: number };
+}
 
 const FirstSection: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -16,14 +28,16 @@ const FirstSection: React.FC = () => {
 
   const shootConfetti = () => {
     const count = 200;
-    const defaults = { origin: { x: 0.8, y: 0.2 } };
-    function fire(particleRatio: number, opts: any) {
+    const defaults: ConfettiOptions = { origin: { x: 0.8, y: 0.2 } };
+
+    function fire(particleRatio: number, opts: ConfettiOptions) {
       confetti({
         ...defaults,
         ...opts,
         particleCount: Math.floor(count * particleRatio),
       });
     }
+
     fire(0.25, { spread: 26, startVelocity: 55 });
     fire(0.2, { spread: 60 });
     fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
@@ -33,7 +47,6 @@ const FirstSection: React.FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // New function to handle sending email
   const handleSendEmail = async () => {
     setLoading(true);
     try {
@@ -90,15 +103,15 @@ const FirstSection: React.FC = () => {
               <p className="mb-6 text-[18px]">Say something to start a live chat!</p>
               <div className="space-y-5 text-[16px]">
                 <div className="flex items-center space-x-4">
-                  <img src="/icons/phone-w.png" alt="phone" className="w-5 h-5" />
+                  <Image src="/icons/phone-w.png" alt="phone" width={20} height={20} />
                   <span>+8875999999</span>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <img src="/icons/email-w.png" alt="email" className="w-5 h-5" />
+                  <Image src="/icons/email-w.png" alt="email" width={20} height={20} />
                   <span>what@gmail.com</span>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <img src="/icons/location-w.png" alt="location" className="w-5 h-5" />
+                  <Image src="/icons/location-w.png" alt="location" width={20} height={20} />
                   <span>132 Dartmouth Street, Boston, Massachusetts 02156, USA</span>
                 </div>
               </div>
@@ -174,7 +187,7 @@ const FirstSection: React.FC = () => {
               <AnimatedTextButton
                 text={loading ? "Sending..." : "Send Message"}
                 disabled={loading}
-                onClick={handleSendEmail} // ✅ Call our email handler
+                onClick={handleSendEmail}
                 className="bg-[#0a253b] border-2 border-white text-white"
               />
             </div>
