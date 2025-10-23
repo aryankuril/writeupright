@@ -1,6 +1,7 @@
 "use client";
 import React from 'react'
 import Header from '../../components/Navbar'
+import FirstSection from '../../components/Services/WebDev/FirstSection'
 import ProcessSection from '../../components/Services/WebDev/ProcessSection'
 import Slider from '../../components/Services/WebDev/Slider'
 import ForthSection from '../../components/ForthSection'
@@ -11,7 +12,8 @@ import Footer from '../../components/Footer'
 const Index = () => {
   return (
     <div>
-      <Header/>
+        <Header/>
+        <FirstSection/>
         <ProcessSection/>
         <Slider/>
         <ForthSection/>
