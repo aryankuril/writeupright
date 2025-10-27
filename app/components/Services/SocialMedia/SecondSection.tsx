@@ -41,11 +41,11 @@ const SecondSection = () => {
       </h2>
 
       {/* LOGO GRID */}
-      <div className="grid grid-cols-4 md:grid-cols-5 gap-4 sm:gap-6 max-w-7xl mx-auto">
+      <div className="grid grid-cols-4 md:grid-cols-5 gap-3 sm:gap-6 max-w-7xl mx-auto">
         {logos.map((logo, index) => (
           <div
             key={index}
-            className="flex items-center justify-center bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 p-6 sm:p-8"
+            className="flex items-center justify-center bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 p-4 sm:p-8"
           >
             <Image
               src={logo.src}

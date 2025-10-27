@@ -83,13 +83,17 @@ const FirstSection = () => {
       <div className="flex-1 w-full max-w-[300px] max-h-[800px] relative">
   <div className="aspect-[2.2/4] relative rounded-[10px] overflow-hidden">
     <video
-      className="absolute w-full h-full object-cover"
-      src="/videos/SocialMedia.mp4" // ✅ Replace with your video path
-      autoPlay
-      loop
-      muted
-      playsInline
-    />
+  className="absolute w-full h-full object-cover"
+  src="/videos/SocialMedia.mp4"
+  autoPlay
+  loop
+  muted
+  playsInline
+  preload="none"         // ✅ prevents auto-downloading on page load
+  // loading="lazy"         // ✅ lazy loads the video (Chrome supports this)
+  poster="/images/card2.jpg" // ✅ lightweight placeholder image
+/>
+
   </div>
 </div>
 

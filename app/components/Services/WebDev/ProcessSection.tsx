@@ -67,7 +67,7 @@ export default function ProcessSection() {
                   onClick={() => setActiveIndex(i)}
                   className={clsx(
                     "w-2.5 h-2.5 rounded-full cursor-pointer transition-all duration-300",
-                    i === activeIndex ? "bg-[#9D00FF] w-6" : "bg-gray-600 hover:bg-gray-400"
+                    i === activeIndex ? "bg-[#0a253b] w-6" : "bg-gray-600 hover:bg-gray-400"
                   )}
                 ></div>
               ))}
@@ -77,69 +77,99 @@ export default function ProcessSection() {
 
         {/* RIGHT SIDE (3D STACK) */}
         <div
-          className="relative w-full md:w-1/2 flex justify-center items-center lg:mb-75 mb-75 md:mb-0 px-2 sm:px-10"
-          style={{ perspective: "1000px", transformStyle: "preserve-3d" }}
+  className="relative w-full md:w-1/2 flex flex-col justify-center items-center lg:mb-75 mb-0 md:mb-0 px-2 sm:px-10"
+  style={{ perspective: "1000px", transformStyle: "preserve-3d" }}
+>
+  {steps.map((step, index) => {
+    const isActive = active.id === step.id;
+    const isEven = index % 2 === 0;
+
+    // Added extra spacing on mobile to prevent overlap
+    const translateY = index * (isMobile ? 100 : 45);
+    const translateZ = index * (isMobile ? -30 : -85);
+
+    return (
+      <div
+        key={step.id}
+        onMouseEnter={() => setActiveIndex(index)}
+        className={clsx(
+          "group transition-all duration-500",
+          "w-[230px] sm:w-[260px] md:w-[280px] lg:w-[280px]",
+          isMobile ? "relative flex flex-col items-center mb-6" : "absolute flex items-center justify-between"
+        )}
+        style={{
+          transform: !isMobile
+            ? `rotateX(58deg) translateY(${translateY}px) translateZ(${translateZ}px)`
+            : "none",
+          transition: "all 0.6s ease",
+          zIndex: steps.length - index,
+        }}
+      >
+        {/* CARD BOX */}
+        <div
+          className={clsx(
+            "rounded-xl transition-all duration-500 shadow-xl w-full relative flex justify-center items-center",
+            "h-[45px] sm:h-[55px] md:h-[80px]",
+            isActive
+              ? "bg-[#0a253b] scale-105 shadow-[0_0_25px_rgba(157,0,255,0.6)]"
+              : "bg-[#242424]"
+          )}
         >
-          {steps.map((step, index) => {
-            const isActive = active.id === step.id;
-            const isEven = index % 2 === 0;
-
-            const translateY = index * (isMobile ? 40 : 45);
-            const translateZ = index * (isMobile ? -30 : -85);
-
-            return (
-              <div
-                key={step.id}
-                onMouseEnter={() => setActiveIndex(index)}
-                className={clsx(
-                  "group absolute flex items-center justify-between transition-all duration-500",
-                  "w-[230px] sm:w-[260px] md:w-[280px] lg:w-[280px]"
-                )}
-                style={{
-                  transform: `rotateX(58deg) translateY(${translateY}px) translateZ(${translateZ}px)`,
-                  transition: "all 0.6s ease",
-                  zIndex: steps.length - index,
-                }}
-              >
-                <div
-                  className={clsx(
-                    "rounded-xl transition-all duration-500 shadow-xl w-full relative flex justify-center items-center",
-                    "h-[45px] sm:h-[55px] md:h-[80px]",
-                    isActive
-                      ? "bg-[#9D00FF] scale-105 shadow-[0_0_25px_rgba(157,0,255,0.6)]"
-                      : "bg-[#242424]"
-                  )}
-                >
-                  <div className="block md:hidden text-[11px] sm:text-xs font-medium text-white text-center">
-                    {step.id}. {step.title}
-                  </div>
-                </div>
-
-                <div
-                  className={clsx(
-                    "hidden md:flex absolute items-center font-medium whitespace-nowrap rounded-full transition-all duration-500",
-                    "gap-2 sm:gap-3 text-xs md:text-base px-4 md:px-5 py-1.5 md:py-2",
-                    isActive ? "bg-[#9D00FF] text-white" : "bg-[#121212] text-gray-300"
-                  )}
-                  style={{
-                    top: "50%",
-                    transform: "translateY(-50%)",
-                    [isEven ? "left" : "right"]: "calc(100% + 30px)",
-                  }}
-                >
-                  {step.id}. {step.title}
-                  <span
-                    className={clsx(
-                      "absolute border-dashed border-t w-8",
-                      isEven ? "left-[-30px]" : "right-[-30px]",
-                      isActive ? "border-[#9D00FF]" : "border-gray-500"
-                    )}
-                  ></span>
-                </div>
-              </div>
-            );
-          })}
+          {/* MOBILE TEXT inside card (disappears smoothly) */}
+          <div
+            className={clsx(
+              "block md:hidden text-[11px] sm:text-xs font-medium text-white text-center transition-all duration-300 ease-in-out",
+              isActive ? "opacity-0 translate-y-[-10px]" : "opacity-100 translate-y-0"
+            )}
+          >
+            {step.id}. {step.title}
+          </div>
         </div>
+
+        {/* MOBILE TEXT BELOW CARD (appears smoothly when active) */}
+        {isMobile && (
+          <div
+            className={clsx(
+              "block md:hidden text-[11px] sm:text-xs font-medium text-white transition-all duration-500 ease-in-out",
+              isActive
+                ? "opacity-100 translate-y-2 max-h-[60px] mt-2"
+                : "opacity-0 -translate-y-2 max-h-0 mt-0"
+            )}
+            style={{
+              overflow: "hidden",
+            }}
+          >
+             {step.id}. {step.title}
+          </div>
+        )}
+
+        {/* DESKTOP LABEL (unchanged) */}
+        <div
+          className={clsx(
+            "hidden md:flex absolute items-center font-medium whitespace-nowrap rounded-full transition-all duration-500",
+            "gap-2 sm:gap-3 text-xs md:text-base px-4 md:px-5 py-1.5 md:py-2",
+            isActive ? "bg-[#0a253b] text-white" : "bg-[#121212] text-gray-300"
+          )}
+          style={{
+            top: "50%",
+            transform: "translateY(-50%)",
+            [isEven ? "left" : "right"]: "calc(100% + 30px)",
+          }}
+        >
+          {step.id}. {step.title}
+          <span
+            className={clsx(
+              "absolute border-dashed border-t w-8",
+              isEven ? "left-[-30px]" : "right-[-30px]",
+              isActive ? "border-[#0a253b]" : "border-gray-500"
+            )}
+          ></span>
+        </div>
+      </div>
+    );
+  })}
+</div>
+
       </section>
     </div>
   );

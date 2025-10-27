@@ -42,6 +42,8 @@ function VerticalMarquee({
               loop
               muted
               playsInline
+              preload="none"         
+              poster="/images/card2.jpg"
               className="w-full h-[480px] object-cover"
             />
           </div>

@@ -99,7 +99,7 @@ const ForthSection = () => {
       </div>
 
       {/* Cards */}
-      <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
+      <div className="flex flex-col lg:flex-row items-start justify-between lg:gap-8 gap-4">
         {cards.map((card, i) => (
           <motion.div
             key={card.id}
@@ -108,20 +108,20 @@ const ForthSection = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="relative w-full sm:w-[90%] md:w-[70%] lg:w-[438px] 
-                       h-60 sm:h-72 md:h-80 rounded-2xl p-6 sm:p-8 
+                       h-45 sm:h-72 md:h-80 rounded-2xl p-6 sm:p-8 
                        flex flex-col justify-between overflow-hidden 
                        border border-black  mx-auto 
                        bg-white text-black hover:bg-[#0a253b] hover:text-white 
                        transition-colors duration-300"
           >
             <div className="relative z-10">
-              <span className="text-[84px] sm:text-5xl md:text-8xl font-bold leading-none">
+              <span className="text-[50px] sm:text-5xl md:text-8xl font-bold leading-none">
                 {counts[i]}
                 <span>+</span>
               </span>
             </div>
 
-            <div className="relative z-10 flex items-center gap-2 mt-4 flex-wrap">
+            <div className="relative z-10 flex items-center gap-2 lg:mt-4 mt-0 flex-wrap">
               <p>{card.text}</p>
             </div>
           </motion.div>

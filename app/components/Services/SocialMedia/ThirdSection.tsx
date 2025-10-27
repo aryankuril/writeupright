@@ -63,6 +63,8 @@ const ThirdSection = () => {
                 muted
                 loop
                 playsInline
+                preload="none"         
+                poster="/images/card2.jpg"
                 className="h-full w-full object-cover"
               />
     

@@ -2,6 +2,7 @@
 import React from "react";
 import AnimatedTextButton from "../../button";
 import { motion } from "framer-motion";
+import { Code2, Smartphone, Zap, Search } from "lucide-react"; // icons
 
 const FirstSection = () => {
   const sentence =
@@ -39,7 +40,11 @@ const FirstSection = () => {
           animate="visible"
         >
           {words.map((word, i) => (
-            <motion.span key={i} variants={child} className="inline-block lg:mr-3 mr-1">
+            <motion.span
+              key={i}
+              variants={child}
+              className="inline-block lg:mr-3 mr-1"
+            >
               {word}{" "}
             </motion.span>
           ))}
@@ -56,13 +61,53 @@ const FirstSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          From professional websites to content that ranks on Google, we’ve got your back.
+          From professional websites to content that ranks on Google, we’ve got
+          your back.
         </motion.p>
+
+        {/* Feature tags */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 justify-center md:justify-start gap-5 mt-6">
+          <div className="flex items-center gap-2">
+            <div className="bg-[#0a253b] p-2 rounded-lg">
+              <Code2 size={20} color="white" />
+            </div>
+            <span className="font-semibold text-[#0a253b] text-sm sm:text-base">
+              CUSTOM CODE
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <div className="bg-[#0a253b] p-2 rounded-lg">
+              <Smartphone size={20} color="white" />
+            </div>
+            <span className="font-semibold text-[#0a253b] text-sm sm:text-base">
+              MOBILE READY
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <div className="bg-[#0a253b] p-2 rounded-lg">
+              <Zap size={20} color="white" />
+            </div>
+            <span className="font-semibold text-[#0a253b] text-sm sm:text-base">
+              LIGHTNING FAST
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <div className="bg-[#0a253b] p-2 rounded-lg">
+              <Search size={20} color="white" />
+            </div>
+            <span className="font-semibold text-[#0a253b] text-sm sm:text-base">
+              SEO OPTIMIZED
+            </span>
+          </div>
+        </div>
 
         <AnimatedTextButton
           text="Get a free Quote"
           href="/contactus"
-          className="mt-4 bg-[#0a253b] border-2 border-white text-white"
+          className="mt-6 bg-[#0a253b] border-2 border-white text-white"
         />
       </div>
 
@@ -70,7 +115,7 @@ const FirstSection = () => {
       <div className="flex-1 w-full max-w-[600px] relative">
         <div className="aspect-[4/3] relative rounded-[20px] sm:rounded-[30px] overflow-hidden">
           <img
-            src="/images/section1-img1.png" // only one image
+            src="/images/section1-img1.png"
             alt="Section 1 Image"
             className="w-full h-full object-cover"
           />
