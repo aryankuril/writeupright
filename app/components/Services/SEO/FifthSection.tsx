@@ -26,7 +26,7 @@ export default function FifthSection() {
   // Authority animation
   useEffect(() => {
     if (showLines) {
-      let start = 75;
+      const start = 75;
       const end = 100;
       const duration = 1200;
       const startTime = performance.now();

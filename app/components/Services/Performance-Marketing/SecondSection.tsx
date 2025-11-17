@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Search, Monitor, Video, Music, Users, Tag, BarChart2, AlertCircle } from "lucide-react";
 import InfoStrip from "../../InfoStrip";
+import GoogleAdsSection from "./Google";
 
 // FourthSection.tsx
 // Place the screenshot images into your public/images folder as:
@@ -115,7 +116,7 @@ export default function SecondSection() {
                       <ul className="mt-3 space-y-2 text-xs text-gray-500">
                         <li>Higher engagement with video on mobile</li>
                         <li>Lookalike Audience: Scale your success</li>
-                        <li>Measure and iterate with Meta's analytics</li>
+                        <li>Measure and iterate with Meta&aposs analytics</li>
                       </ul>
                     </div>
                   </div>

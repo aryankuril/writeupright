@@ -54,7 +54,7 @@ export default function Thirdsection() {
 
   return (
     <div className="w-full container py-10 sm:py-15 lg:py-20 flex flex-col items-center">
-      <h2 className="text-center text-3xl sm:text-4xl font-semibold text-black ">Content Hero's Journey</h2>
+      <h2 className="text-center text-3xl sm:text-4xl font-semibold text-black ">Content Hero&aposs Journey</h2>
       <p className="text-gray-600 mb-10 text-center">The transformation from idea to optimized, published content</p>
 
       <div className="relative w-full px-6 overflow-hidden">
