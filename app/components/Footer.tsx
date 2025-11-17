@@ -21,7 +21,7 @@ const letterVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
   return (
-    <footer className="py-12 lg:px-4 bg-[#0a253b] lg:mt-10">
+    <footer className="py-12 lg:px-4 bg-[#0a253b] lg:mt-10 ">
       <div className="container max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-5 lg:gap-10">
 
         {/* Left Section - Logo + Text + Social */}

@@ -36,13 +36,13 @@ export default function Header() {
     {
       title: 'SEO',
       links: [
-        { name: 'Technical SEO', href: '/services#technical-seo' },
-        { name: 'Content Marketing', href: '/services#content-marketing' },
-        { name: 'International SEO', href: '/services#international-seo' },
-        { name: 'Ecommerce SEO', href: '/services#ecommerce-seo' },
-        { name: 'SEO Audits', href: '/services#seo-audits' },
-        { name: 'SEO Migration Services', href: '/services#seo-migration' },
-        { name: 'Local SEO', href: '/services#local-seo' },
+        { name: 'Technical SEO', href: '/services/seo' },
+        { name: 'Content Marketing', href: '/services/seo' },
+        { name: 'International SEO', href: '/services/seo' },
+        { name: 'Ecommerce SEO', href: '/services/seo' },
+        { name: 'SEO Audits', href: '/services/seo' },
+        { name: 'SEO Migration Services', href: '/services/seo' },
+        { name: 'Local SEO', href: '/services/seo' },
       ],
     },
     {
