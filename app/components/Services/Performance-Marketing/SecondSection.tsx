@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Search, Monitor, Video, Music, Users, Tag, BarChart2, AlertCircle } from "lucide-react";
 import InfoStrip from "../../InfoStrip";
-import GoogleAdsSection from "./Google";
+// import GoogleAdsSection from "./Google";
 
 // FourthSection.tsx
 // Place the screenshot images into your public/images folder as:
