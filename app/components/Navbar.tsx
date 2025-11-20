@@ -4,14 +4,32 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import AnimatedButton from './button';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  /* ------- SERVICES DROPDOWN WITH DELAY -------- */
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [openServiceIndex, setOpenServiceIndex] = useState<number | null>(null);
+
+  const closeTimer = useRef<NodeJS.Timeout | null>(null);
+
+  const startCloseTimer = () => {
+    closeTimer.current = setTimeout(() => {
+      setIsServicesOpen(false);
+    }, 2000); // 3 seconds delay
+  };
+
+  const cancelCloseTimer = () => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  };
+
   const pathname = usePathname();
 
   useEffect(() => {
@@ -26,7 +44,7 @@ export default function Header() {
 
   const navItems = [
     { href: '/', label: 'Home' },
-    { href: '/services', label: 'All Services' },
+    { href: '#', label: 'All Services' },
     { href: '/ourwork', label: 'Our Work' },
     { href: '/aboutus', label: 'About us' },
     { href: '/contactus', label: 'Contact Us' },
@@ -87,7 +105,7 @@ export default function Header() {
 
   return (
     <header
-      className={`container sticky mt-[15px] z-50 transition-all duration-300 rounded-[15px]
+      className={`container sticky mt-[15px] z-[99999] transition-all duration-300 rounded-[15px] 
       ${isScrolled ? 'bg-[#0a253b] shadow-lg' : 'bg-[#0a253b]'}`}
     >
       <nav className="mx-auto py-2 px-2 md:px-20 lg:px-[20px] relative">
@@ -97,7 +115,7 @@ export default function Header() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="flex items-center justify-between"
         >
-          {/* Left - Logo */}
+          {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
               <Image
@@ -111,40 +129,46 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Center - Desktop Navigation */}
-          <div className="hidden lg:flex flex-1 justify-center gap-[40px] relative">
+          {/* DESKTOP NAV */}
+          <div className="hidden lg:flex flex-1 justify-center gap-[40px] relative z-[99999]">
             {navItems.map((item) => (
               <div
                 key={item.href}
                 className="relative"
-                onMouseEnter={() =>
-                  item.label === 'All Services' && setIsServicesOpen(true)
-                }
-                onMouseLeave={() =>
-                  item.label === 'All Services' && setIsServicesOpen(false)
-                }
+                onMouseEnter={() => {
+                  if (item.label === 'All Services') {
+                    cancelCloseTimer();
+                    setIsServicesOpen(true);
+                  }
+                }}
+                onMouseLeave={() => {
+                  if (item.label === 'All Services') startCloseTimer();
+                }}
               >
                 <Link
                   href={item.href}
                   className="font-sans text-white transition-colors relative
                     after:content-[''] after:absolute after:bottom-[-4px] after:left-0
                     after:w-full after:h-[2px] after:bg-[#ffffff] after:scale-x-0
-                    hover:after:scale-x-100 after:transition-transform after:duration-300"
+                    hover:after:scale-x-100 after:transition-transform after:duration-300 "
                 >
                   {item.label}
                 </Link>
 
-                {/* Desktop Mega Menu */}
+                {/* MEGA MENU */}
                 {item.label === 'All Services' && isServicesOpen && (
                   <div
-                    className="absolute left-[9em] top-[50px] transform -translate-x-1/2 w-[95vw] max-w-[1200px] 
-                      bg-[#1b2735] text-white rounded-[10px] shadow-xl p-10 flex flex-wrap justify-between 
-                      transition-all duration-300"
-                    onMouseEnter={() => setIsServicesOpen(true)}
-                    onMouseLeave={() => setIsServicesOpen(false)}
+                    className="absolute z-[9999] left-[9em] top-[50px] transform -translate-x-1/2 w-[95vw] max-w-[1200px] 
+                    bg-[#1b2735] text-white rounded-[10px] shadow-xl p-10 flex flex-wrap justify-between 
+                    transition-all duration-300"
+                    onMouseEnter={() => {
+                      cancelCloseTimer();
+                      setIsServicesOpen(true);
+                    }}
+                    onMouseLeave={startCloseTimer}
                   >
                     {servicesData.map((col, index) => (
-                      <div key={index} className="w-[45%] sm:w-[30%] md:w-[18%] mb-6">
+                      <div key={index} className="w-[45%] sm:w-[30%] md:w-[18%] mb-6 ">
                         <h3 className="text-[18px] font-semibold mb-3">{col.title}</h3>
                         <ul className="space-y-2">
                           {col.links.map((link, idx) => (
@@ -167,12 +191,12 @@ export default function Header() {
             ))}
           </div>
 
-          {/* Right - Button */}
+          {/* RIGHT BUTTON */}
           <div className="hidden lg:flex items-center">
             <AnimatedButton text="Get a free Quote" href="/profile" />
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* MOBILE MENU BUTTON */}
           <button
             className="lg:hidden p-2 text-white hover:text-[#FBB04C] transition-colors"
             onClick={() => setIsOpen(!isOpen)}
@@ -188,7 +212,7 @@ export default function Header() {
           </button>
         </motion.div>
 
-        {/* ---------------- MOBILE MENU ---------------- */}
+        {/* MOBILE MENU */}
         <div
           id="mobile-menu"
           className={`container lg:hidden fixed inset-0 z-50 bg-[#0a253b] transition-all duration-300 h-screen
@@ -206,7 +230,7 @@ export default function Header() {
           </button>
 
           <nav className="p-5 space-y-4 mt-12">
-            {/* SERVICES DROPDOWN */}
+            {/* Services Dropdown Mobile */}
             <div>
               <button
                 className="w-full text-left text-xl font-sans text-white flex justify-between items-center"
@@ -229,9 +253,7 @@ export default function Header() {
                     <div key={index}>
                       <button
                         className="w-full text-left text-lg font-semibold text-white flex justify-between items-center"
-                        onClick={() =>
-                          setOpenServiceIndex(openServiceIndex === index ? null : index)
-                        }
+                        onClick={() => setOpenServiceIndex(openServiceIndex === index ? null : index)}
                       >
                         {service.title}
                         <svg
@@ -267,10 +289,10 @@ export default function Header() {
               )}
             </div>
 
-            {/* OTHER NAV LINKS */}
+            {/* OTHER LINKS */}
             {navItems
               .filter((item) => item.label !== 'All Services')
-              .map((item, index) => (
+              .map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}

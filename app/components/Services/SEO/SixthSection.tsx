@@ -155,24 +155,24 @@ export default function SixthSection() {
 
         {/* KPI Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-10">
-          <div className="bg-orange-50 rounded-xl p-6 text-center">
+          <div className="bg-[#1a2233] rounded-xl p-6 text-center">
             <p className="text-orange-500 text-3xl font-bold">333%</p>
-            <p className="text-gray-700 mt-1 text-sm">Organic Traffic Growth</p>
+            <p className="text-white mt-1 text-sm">Organic Traffic Growth</p>
           </div>
 
-          <div className="bg-orange-50 rounded-xl p-6 text-center">
+          <div className="bg-[#1a2233] rounded-xl p-6 text-center">
             <p className="text-orange-500 text-3xl font-bold">4:32</p>
-            <p className="text-gray-700 mt-1 text-sm">Avg. Time on Page</p>
+            <p className="text-white mt-1 text-sm">Avg. Time on Page</p>
           </div>
 
-          <div className="bg-orange-50 rounded-xl p-6 text-center">
+          <div className="bg-[#1a2233] rounded-xl p-6 text-center">
             <p className="text-orange-500 text-3xl font-bold">2.3%</p>
-            <p className="text-gray-700 mt-1 text-sm">Conversion Rate</p>
+            <p className="text-white mt-1 text-sm">Conversion Rate</p>
           </div>
 
-          <div className="bg-orange-50 rounded-xl p-6 text-center">
+          <div className="bg-[#1a2233] rounded-xl p-6 text-center">
             <p className="text-orange-500 text-3xl font-bold">3.8</p>
-            <p className="text-gray-700 mt-1 text-sm">Pages per Session</p>
+            <p className="text-white mt-1 text-sm">Pages per Session</p>
           </div>
         </div>
       </div>

@@ -14,7 +14,7 @@ const steps = [
 ];
 
 export default function ProcessSection() {
-  const [activeIndex, setActiveIndex] = useState(4);
+  const [activeIndex, setActiveIndex] = useState(0);
   const active = steps[activeIndex];
   const [isMobile, setIsMobile] = useState(false);
 

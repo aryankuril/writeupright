@@ -66,7 +66,7 @@ export default function FourthSection() {
       </div>
 
       {/* ===== BOTTOM 3 BOXES ===== */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full max-w-6xl mt-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full  mt-6">
 
         {/* Technical SEO */}
         <div className="bg-gradient-to-r from-[#1e9afe] to-[#00c6fb] rounded-xl p-6 shadow-md">
