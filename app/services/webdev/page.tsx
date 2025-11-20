@@ -4,7 +4,7 @@ import Header from '../../components/Navbar'
 import FirstSection from '../../components/Services/WebDev/FirstSection'
 import ProcessSection from '../../components/Services/WebDev/ProcessSection'
 import Slider from '../../components/Services/WebDev/Slider'
-import ForthSection from '../../components/ForthSection'
+import Faq from '@/app/components/Services/WebDev/Faq';
 import TechStackShowcase from '../../components/Services/WebDev/TechStackShowcase'
 import SixthSection from '../../components/SixthSection'
 import Footer from '../../components/Footer'
@@ -16,7 +16,7 @@ const Index = () => {
         <FirstSection/>
         <ProcessSection/>
         <Slider/>
-        <ForthSection/>
+        <Faq/>
         <TechStackShowcase/>
         <SixthSection/>
         <Footer/>

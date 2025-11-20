@@ -54,10 +54,10 @@ export default function ProcessSection() {
           </AnimatePresence>
 
           <div className="absolute bottom-[-70px] flex items-center gap-6">
-            <button onClick={handlePrev} className="w-10 h-10 border border-gray-600 rounded-full flex items-center justify-center hover:border-[#9D00FF] hover:text-[#9D00FF] transition-all">
+            <button onClick={handlePrev} className="w-10 h-10 border border-gray-600 rounded-full flex items-center justify-center cursor-pointer">
               <ChevronLeft size={20} />
             </button>
-            <button onClick={handleNext} className="w-10 h-10 border border-gray-600 rounded-full flex items-center justify-center hover:border-[#9D00FF] hover:text-[#9D00FF] transition-all">
+            <button onClick={handleNext} className="w-10 h-10 border border-gray-600 rounded-full flex items-center justify-center cursor-pointer">
               <ChevronRight size={20} />
             </button>
             <div className="flex items-center gap-2 ml-4">
@@ -66,7 +66,7 @@ export default function ProcessSection() {
                   key={i}
                   onClick={() => setActiveIndex(i)}
                   className={clsx(
-                    "w-2.5 h-2.5 rounded-full cursor-pointer transition-all duration-300",
+                    "w-2.5 h-2.5 rounded-full cursor-pointer transition-all duration-300 ",
                     i === activeIndex ? "bg-[#0a253b] w-6" : "bg-gray-600 hover:bg-gray-400"
                   )}
                 ></div>

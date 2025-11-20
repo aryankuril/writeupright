@@ -47,7 +47,7 @@ const letterVariants = {
           </motion.div>
 
           <p className="text-white font-['Roboto'] lg:w-[450px] text-[14px] font-normal leading-[24px]">
-            We offers a comprehensive suite of digital marketing services that cover all aspects of our online presence. From SEO and social media marketing to content creation and PPC advertising, they have the expertise and resources to handle our diverse marketing needs.
+We are a leading digital solutions agency offering website development, SEO, paid ads, and social media marketing. We offer a comprehensive suite of digital marketing services that cover every aspect of your online presence, our team has the expertise and resources to manage all your marketing needs.
           </p>
 
           {/* Social Icons */}

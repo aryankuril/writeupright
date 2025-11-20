@@ -1,12 +1,12 @@
 'use client';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import AnimatedButton from './button';
+import AnimatedTextButton from '../../button';
 
-const ForthSection = () => {
-const [activeIndex, setActiveIndex] = useState<number | null>(0);
-
-
+const Faq = () => {
+    const [activeIndex, setActiveIndex] = useState<number | null>(0);
+    
+    
 const faqs = [
   {
     question: "What is the most effective digital marketing strategy in 2025?",
@@ -38,12 +38,75 @@ const faqs = [
     answer:
       "It depends on your business:\n• Google Ads → Best for people actively searching\n• Meta Ads (Facebook/Instagram) → Best for awareness + lead generation\n• YouTube → Best for branding\n• LinkedIn → Best for B2B companies\nThere is no universal 'best' platform—ROI depends on targeting and your product/service.",
   },
+
+  // ➤ NEW WEBSITE DEVELOPMENT FAQS
+  {
+    question: "How much does a website cost?",
+    answer:
+      "The cost depends on the type of website (business site, e-commerce, custom platform). Basic websites start from ₹8,000–₹1,50,000, while advanced websites cost more depending on features and integrations.",
+  },
+  {
+    question: "How long does it take to build a website?",
+    answer:
+      "A landing page can be built in 2 days after receiving all information.\nA standard business website takes 7–20 days.\nE-commerce or custom websites may take 3–6 weeks depending on complexity.",
+  },
+  {
+    question: "Can you redesign or upgrade my existing website?",
+    answer:
+      "Yes. We can redesign your website by improving speed, design, SEO, security, and user experience while keeping your existing content and data safe.",
+  },
+  {
+    question: "Do you provide hosting and domain services?",
+    answer:
+      "Yes. We can help you purchase, set up, or manage your domain, hosting, and SSL certificate. We recommend purchasing hosting and domain in your own name to ensure ownership, transparency, security, and full control.",
+  },
+  {
+    question: "Will my website be mobile-friendly?",
+    answer:
+      "Absolutely. We provide Mobile First development. All websites we build are responsive and work perfectly on mobile, tablet, and desktop.",
+  },
+  {
+    question: "Do you provide website maintenance?",
+    answer:
+      "Yes, we offer monthly and yearly maintenance for updates, backups, security checks, and bug fixes. One year of free maintenance is included for websites or apps costing above ₹25,000.",
+  },
+  {
+    question: "Can you integrate payment gateways, WhatsApp, CRM, or other tools?",
+    answer:
+      "Yes. We integrate Razorpay, Stripe, PayPal, WhatsApp API, CRM systems, AI tools, Inventory/ERP, SMS & Email automation.",
+  },
+  {
+    question: "What technologies do you use for development?",
+    answer:
+      "We use:\n• Frontend: React, Next.js, Vue, HTML/CSS/JS\n• Backend: Node.js, PHP (Laravel), Python Django\n• CMS: WordPress, Shopify\n• Mobile Apps: Flutter, React Native\n• Cloud: AWS, Firebase, DigitalOcean",
+  },
+  {
+    question: "Do you develop mobile apps?",
+    answer:
+      "Yes. We build Android, iOS, and hybrid apps for businesses, e-commerce, on-demand services, and custom workflows.",
+  },
+  {
+    question: "What is SaaS development and do you offer it?",
+    answer:
+      "Yes. We create full SaaS platforms including multi-tenant systems, subscription billing, admin dashboards, API integrations, cloud hosting, and user role management. Ideal for startups launching software products.",
+  },
+  {
+    question: "Will my website be SEO-friendly?",
+    answer:
+      "Yes. Every website includes on-page SEO, fast loading speed, clean structure, indexing setup, and SEO-ready content & tags. Advanced SEO is available separately.",
+  },
+  {
+    question: "Do you provide support after the website is launched?",
+    answer:
+      "Yes. We provide ongoing support for troubleshooting, updates, and enhancements.",
+  },
 ];
 
-
-  const toggleFaq = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
+    
+    
+      const toggleFaq = (index: number) => {
+        setActiveIndex(activeIndex === index ? null : index);
+      };
   return (
      <section className="container max-w-6xl bg-white rounded-[20px] mx-auto py-10 sm:py-15 lg:py-20 ">
       <div className="flex flex-col lg:flex-row justify-between gap-10">
@@ -63,7 +126,7 @@ const faqs = [
 
           <div className="flex gap-10 text-[#010205]  ">
 
-                        <AnimatedButton
+                        <AnimatedTextButton
               text="More Questions"
               href="/contactus"
                className="bg-[#0a253b] border-2 border-white text-white"
@@ -122,4 +185,4 @@ const faqs = [
   )
 }
 
-export default ForthSection
+export default Faq

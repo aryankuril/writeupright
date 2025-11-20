@@ -9,43 +9,67 @@ import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    name: "Dereck Shumba",
+    name: "Ali R.",
     rating: 5,
     content:
-      "Website completed in record time , very responsive, love it, Highly recommend the team 🥰",
+      "The best part was how easy they made everything. It seemed so complicated in my head but they handled design, features, content, and launch flawlessly.",
     tagline: "Verified Google Review",
-    designation: "CMO, TechCorp",
+    designation: "Education Institute",
     image: "/images/card-img.jpg",
     googleVerified: true,
   },
   {
-    name: "Jane Smith",
+    name: "Rajesh C.",
     rating: 5,
-    content: "Excellent product quality, exceeded my expectations!",
-    tagline: "Outstanding Experience",
-    designation: "CMO, TechCorp",
+    content:
+      "Their SEO strategy is practical and transparent. We finally understand what’s actually happening behind the scenes.",
+    tagline: "Verified Google Review",
+    designation: "Real Estate Consultant",
     image: "/images/card-img.jpg",
     googleVerified: false,
   },
   {
-    name: "Alex Johnson",
-    rating: 2,
-    content: "Support team was helpful but delivery could be faster.",
-    tagline: "Fast & Efficient",
-    designation: "Manager, SoftInc",
+    name: "Devang M.",
+    rating: 4,
+    content:
+      "Traffic went up, calls went up, and our Google visibility improved more than we expected.",
+    tagline: "Verified Google Review",
+    designation: "E-commerce Store",
     image: "/images/card-img.jpg",
     googleVerified: false,
   },
   {
-    name: "Emily Brown",
-    rating: 1,
-    content: "Product did not meet my expectations.",
-    tagline: "Could Improve",
-    designation: "Founder, StartUpX",
+    name: "Jasmin L.",
+    rating: 4,
+    content:
+      "Our social media pages look so professional now. Content quality improved and we are receiving business enquiries which they promised.",
+    tagline: "Verified Google Review",
+    designation: "Furniture Store Owner",
     image: "/images/card-img.jpg",
     googleVerified: false,
+  },
+  {
+    name: "Karan B.",
+    rating: 5,
+    content:
+      "Whole team is very well behaved and professional, they do not over promise. They tell you a realistic picture and work diligently—their strategies work, as simple as that.",
+    tagline: "Verified Google Review",
+    designation: "Manpower Supply Company",
+    image: "/images/card-img.jpg",
+    googleVerified: true,
+  },
+  {
+    name: "Priya S.",
+    rating: 5,
+    content:
+      "They built our website exactly the way we wanted — clean, fast, and mobile-friendly. Our enquiries increased within the first month with their campaigns.",
+    tagline: "Verified Google Review",
+    designation: "Travel Agency",
+    image: "/images/card-img.jpg",
+    googleVerified: true,
   },
 ];
+
 
 const GoogleIcon = () => (
   <svg width="20" height="20" viewBox="0 0 48 48">

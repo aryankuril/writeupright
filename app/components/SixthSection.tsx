@@ -42,7 +42,7 @@ const SixthSection = () => {
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
         >
           <AnimatedButton
-            text="Get started"
+            text="Speak With a Real Expert"
             href="/contactus"
             className="mt-4 bg-[#0a253b]  text-white"
           />
