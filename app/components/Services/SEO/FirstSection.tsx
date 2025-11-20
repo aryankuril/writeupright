@@ -64,7 +64,7 @@ const FirstSection = () => {
           From professional websites to content that ranks on Google, we’ve got
           your back.
         </motion.p>
-{/*  */}
+
         {/* Feature tags */}
         <div className="grid grid-cols-2 sm:grid-cols-2 justify-center md:justify-start gap-5 mt-6">
           <div className="flex items-center gap-2">
