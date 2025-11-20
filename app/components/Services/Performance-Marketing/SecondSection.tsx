@@ -966,8 +966,8 @@ export default function SecondSection() {
                 <span>🔊</span> Audio Ad • 30 seconds
               </p>
               <p className="text-gray-700 text-sm mt-2 leading-relaxed">
-                "Discover the perfect solution for your active lifestyle.
-                Visit our website to learn more and get 20% off your first order."
+                &quotDiscover the perfect solution for your active lifestyle.
+                Visit our website to learn more and get 20% off your first order.&quot
               </p>
 
               <button className="mt-4 bg-green-600 text-white w-full py-2 rounded-full font-semibold">
@@ -1059,7 +1059,7 @@ export default function SecondSection() {
       <p className="text-sm text-gray-700">Sponsored by Your Brand</p>
 
       <p className="mt-3 text-gray-700 text-sm italic">
-        "This episode is brought to you by [Your Brand]. Transform your daily
+        &quotThis episode is brought to you by [Your Brand]. Transform your daily
         routine with…”
       </p>
     </div>
