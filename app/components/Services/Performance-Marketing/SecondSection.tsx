@@ -328,7 +328,7 @@ export default function SecondSection() {
           Meta Ads: Facebook & Instagram
         </h2>
         <p className="text-sm text-gray-500 mt-1 max-w-xl mx-auto">
-         Leverage the world's most sophisticated audience targeting to reach your ideal customers across Facebook and Instagram's 3 billion+ active users.
+         Leverage the world&aposs most sophisticated audience targeting to reach your ideal customers across Facebook and Instagram&aposs 3 billion+ active users.
         </p>
       </div>
 
@@ -404,7 +404,7 @@ export default function SecondSection() {
               <div>
                 <p className="font-medium text-gray-700">Core Audience</p>
                 <p className="text-sm text-gray-500">
-                  Target specific demographics, interests, and behaviors from Meta's 3B+ users
+                  Target specific demographics, interests, and behaviors from Meta&aposs 3B+ users
                 </p>
               </div>
             </div>
@@ -1126,7 +1126,7 @@ export default function SecondSection() {
 <div className="bg-[#0a253b] lg:p-6 p-3 rounded-xl shadow-sm">
 <h3 className="text-lg font-semibold text-white mb-3">The Screen-Less Advantage</h3>
 <p className="text-gray-400 text-sm mb-4">
-Audio advertising reaches listeners during unique moments when they're engaged but not looking at screens - whether they're working out, commuting, cooking, or relaxing. This creates a more intimate connection and reduces ad fatigue from visual overload.
+Audio advertising reaches listeners during unique moments when they&aposre engaged but not looking at screens - whether they&aposre working out, commuting, cooking, or relaxing. This creates a more intimate connection and reduces ad fatigue from visual overload.
 </p>
 
 
